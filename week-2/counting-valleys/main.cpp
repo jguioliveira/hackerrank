@@ -15,7 +15,24 @@ string rtrim(const string &);
  */
 
 int countingValleys(int steps, string path) {
-
+    int position = 0, valley = 0;
+    bool sealLevel = true; 
+    for (int i = 0; i < steps; i++) {
+        if(path[i] == 'D')
+            position --;
+        else 
+            position ++;
+            
+        if(position < 0 && sealLevel){
+            valley ++;
+            sealLevel = false;
+        }
+        
+        if(position >= 0 && !sealLevel)
+            sealLevel = true;            
+    }
+    
+    return valley;
 }
 
 int main()

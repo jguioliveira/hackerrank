@@ -14,7 +14,18 @@ vector<string> split(const string &);
  */
 
 int diagonalDifference(vector<vector<int>> arr) {
-
+    int leftRight = 0, rightLeft =0;
+    int size = arr.size() -1;
+    for (int i=0; i <= size; i++) {
+        leftRight += arr[i][i];
+        rightLeft += arr[i][size -i];
+    }
+    
+    int result = leftRight - rightLeft;
+    if(result < 0)
+        result *= -1;
+        
+    return result;
 }
 
 int main()

@@ -13,7 +13,9 @@ string rtrim(const string &);
  */
 
 long flippingBits(long n) {
-
+    uint32_t bitNumber = static_cast<uint32_t>(n);
+    uint32_t flippedNumber = ~bitNumber;
+    return static_cast<long>(flippedNumber);    
 }
 
 int main()

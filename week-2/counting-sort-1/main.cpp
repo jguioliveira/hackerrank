@@ -14,7 +14,13 @@ vector<string> split(const string &);
  */
 
 vector<int> countingSort(vector<int> arr) {
-
+    vector<int> result(100);
+    
+    for (int i =0; i < arr.size(); i++) {
+        result[arr[i]]++;
+    }
+    
+    return result;
 }
 
 int main()

@@ -10,7 +10,21 @@ using namespace std;
  */
 
 string pangrams(string s) {
+    unordered_map<char, int> alphabetMap;
+    
+    for (int i = 0; i< s.length(); i++) {
+        char letter = tolower(s[i]);
+        if (letter == ' ') {
+            continue;
+        }
+        
+        alphabetMap[letter]++;
+    }
+    
+    if(alphabetMap.size() == 26)
+        return "pangram";
 
+    return "not pangram";
 }
 
 int main()

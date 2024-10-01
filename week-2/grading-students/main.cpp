@@ -13,7 +13,17 @@ string rtrim(const string &);
  */
 
 vector<int> gradingStudents(vector<int> grades) {
-
+    
+    for(int i = 0; i < grades.size(); i++){
+        if(grades[i] < 38 || grades[i] % 5 == 0)
+            continue;
+            
+        int roundedGrade = ((grades[i] + 4) / 5) * 5;
+        
+        if (roundedGrade - grades[i] < 3)
+            grades[i] = roundedGrade;        
+    }
+    return grades;
 }
 
 int main()
